@@ -1,0 +1,24 @@
+{
+  "name": "reveal-md-sparkbox",
+  "version": "1.0.0",
+  "description": "Frontend Developer's Guide to Setting Up a Modern Web Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "reveal-md slides.md",
+    "dev": "parallelshell \"npm run dev-reveal\" \"npm run dev-sass\"",
+    "dev-reveal": "reveal-md slides.md -w",
+    "dev-sass": "node-sass -w src/sass/sparkbox.scss dist/css/sparkbox.css",
+    "build": "npm run sass && reveal-md slides.md --static _static --css dist/css/sparkbox.css",
+    "sass": "node-sass src/sass/sparkbox.scss dist/css/sparkbox.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "reveal-md": "^2.4.0"
+  },
+  "devDependencies": {
+    "node-sass": "^4.11.0",
+    "parallelshell": "^3.0.2"
+  }
+}
